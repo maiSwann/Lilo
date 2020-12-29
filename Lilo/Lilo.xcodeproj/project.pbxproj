@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1A3C591C259B76E4001C1B0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C591B259B76E4001C1B0E /* AppDelegate.swift */; };
 		1A3C591E259B76E4001C1B0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C591D259B76E4001C1B0E /* SceneDelegate.swift */; };
+		1A3C5920259B76E4001C1B0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C591F259B76E4001C1B0E /* ViewController.swift */; };
 		1A3C5923259B76E4001C1B0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3C5921259B76E4001C1B0E /* Main.storyboard */; };
 		1A3C5925259B76E7001C1B0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3C5924259B76E7001C1B0E /* Assets.xcassets */; };
 		1A3C5928259B76E7001C1B0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3C5926259B76E7001C1B0E /* LaunchScreen.storyboard */; };
 		1A3C5933259B76E7001C1B0E /* LiloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C5932259B76E7001C1B0E /* LiloTests.swift */; };
 		1A3C593E259B76E7001C1B0E /* LiloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C593D259B76E7001C1B0E /* LiloUITests.swift */; };
-		1A3C5962259B7F68001C1B0E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C5961259B7F68001C1B0E /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,7 @@
 		1A3C5918259B76E4001C1B0E /* Lilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3C591B259B76E4001C1B0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A3C591D259B76E4001C1B0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1A3C591F259B76E4001C1B0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A3C5922259B76E4001C1B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A3C5924259B76E7001C1B0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A3C5927259B76E7001C1B0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		1A3C5939259B76E7001C1B0E /* LiloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3C593D259B76E7001C1B0E /* LiloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiloUITests.swift; sourceTree = "<group>"; };
 		1A3C593F259B76E7001C1B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A3C5961259B7F68001C1B0E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +99,9 @@
 		1A3C591A259B76E4001C1B0E /* Lilo */ = {
 			isa = PBXGroup;
 			children = (
-				1A3C5954259B7910001C1B0E /* Controller */,
-				1A3C5953259B790A001C1B0E /* View */,
-				1A3C5952259B7903001C1B0E /* Model */,
 				1A3C591B259B76E4001C1B0E /* AppDelegate.swift */,
 				1A3C591D259B76E4001C1B0E /* SceneDelegate.swift */,
+				1A3C591F259B76E4001C1B0E /* ViewController.swift */,
 				1A3C5921259B76E4001C1B0E /* Main.storyboard */,
 				1A3C5924259B76E7001C1B0E /* Assets.xcassets */,
 				1A3C5926259B76E7001C1B0E /* LaunchScreen.storyboard */,
@@ -128,28 +126,6 @@
 				1A3C593F259B76E7001C1B0E /* Info.plist */,
 			);
 			path = LiloUITests;
-			sourceTree = "<group>";
-		};
-		1A3C5952259B7903001C1B0E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1A3C5953259B790A001C1B0E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1A3C5954259B7910001C1B0E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1A3C5961259B7F68001C1B0E /* HomeVC.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A3C5962259B7F68001C1B0E /* HomeVC.swift in Sources */,
+				1A3C5920259B76E4001C1B0E /* ViewController.swift in Sources */,
 				1A3C591C259B76E4001C1B0E /* AppDelegate.swift in Sources */,
 				1A3C591E259B76E4001C1B0E /* SceneDelegate.swift in Sources */,
 			);
