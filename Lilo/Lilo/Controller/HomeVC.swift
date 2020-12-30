@@ -23,8 +23,12 @@ class HomeVC: UIViewController {
         configureLocationServices()
         
         StationService.instance.getAllStations { (success) in
-            if !success {
-                return
+            if success {
+                let coordinate: CLLocationCoordinate2D = self.locationManager.location!.coordinate
+                let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+                let closestTenLocation = StationService.instance.sortedByTenClosestLocation(userLocation: location)
+                
+                self.displayStationPin(locations: closestTenLocation)
             }
         }
     }
@@ -40,15 +44,15 @@ extension HomeVC: MKMapViewDelegate {
     func centerMapOnUserLocation() {
         let coordinate: CLLocationCoordinate2D = locationManager.location!.coordinate
         let coordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        
-        // Find ten closest by user location
-        let closestTenLocation = StationService.instance.sortedByTenClosestLocation(userLocation: location)
-        for i in 0..<closestTenLocation.count {
-            print("latitude : \(closestTenLocation[i].coordinate.latitude)\nlongitude: \(closestTenLocation[i].coordinate.longitude)")
-        }
-        // Zoom Region
         mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func displayStationPin(locations: [CLLocation]) {
+        for i in 0..<locations.count {
+            let pinCoordinate = locations[i].coordinate
+            let annotation = StationPin(coordinate: pinCoordinate, identifier: "stationPin")
+            mapView.addAnnotation(annotation)
+        }
     }
 }
 
