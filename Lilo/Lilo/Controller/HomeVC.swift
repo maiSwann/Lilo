@@ -24,6 +24,9 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
+        if locationManager.authorizationStatus == .authorizedAlways || locationManager.authorizationStatus == .authorizedWhenInUse {
+            centerMapOnUserLocation()
+        }
     }
 }
 
