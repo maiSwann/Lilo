@@ -15,6 +15,9 @@
 		1A3C5933259B76E7001C1B0E /* LiloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C5932259B76E7001C1B0E /* LiloTests.swift */; };
 		1A3C593E259B76E7001C1B0E /* LiloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C593D259B76E7001C1B0E /* LiloUITests.swift */; };
 		1A3C5962259B7F68001C1B0E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3C5961259B7F68001C1B0E /* HomeVC.swift */; };
+		1E3B1E737914BF6A382F33E2 /* Pods_Lilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF48E2E455B4EF83F735E7 /* Pods_Lilo.framework */; };
+		9CB5DD6595E7CE4061CC0955 /* Pods_Lilo_LiloUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD3F37F2F9C6EF2A69B120A /* Pods_Lilo_LiloUITests.framework */; };
+		CFB45D0BDFAB9CE74CE2A743 /* Pods_LiloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9277DB99EB8A093E09228749 /* Pods_LiloTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,15 @@
 		1A3C593D259B76E7001C1B0E /* LiloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiloUITests.swift; sourceTree = "<group>"; };
 		1A3C593F259B76E7001C1B0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A3C5961259B7F68001C1B0E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1DD3F37F2F9C6EF2A69B120A /* Pods_Lilo_LiloUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lilo_LiloUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F7438924ADFD5A9603659C1 /* Pods-Lilo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo.release.xcconfig"; path = "Target Support Files/Pods-Lilo/Pods-Lilo.release.xcconfig"; sourceTree = "<group>"; };
+		4CE2956EE022C8A4311C59AC /* Pods-Lilo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo.debug.xcconfig"; path = "Target Support Files/Pods-Lilo/Pods-Lilo.debug.xcconfig"; sourceTree = "<group>"; };
+		59EF48E2E455B4EF83F735E7 /* Pods_Lilo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lilo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B9721009607EDD21575ED5B /* Pods-LiloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiloTests.debug.xcconfig"; path = "Target Support Files/Pods-LiloTests/Pods-LiloTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9277DB99EB8A093E09228749 /* Pods_LiloTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiloTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE9F8BD1747617C8236D8335 /* Pods-Lilo-LiloUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo-LiloUITests.debug.xcconfig"; path = "Target Support Files/Pods-Lilo-LiloUITests/Pods-Lilo-LiloUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C18124E8FC414BF7E4E8CED8 /* Pods-Lilo-LiloUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo-LiloUITests.release.xcconfig"; path = "Target Support Files/Pods-Lilo-LiloUITests/Pods-Lilo-LiloUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F7C3D410A8FF77C175177036 /* Pods-LiloTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiloTests.release.xcconfig"; path = "Target Support Files/Pods-LiloTests/Pods-LiloTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E3B1E737914BF6A382F33E2 /* Pods_Lilo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB45D0BDFAB9CE74CE2A743 /* Pods_LiloTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB5DD6595E7CE4061CC0955 /* Pods_Lilo_LiloUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				1A3C5931259B76E7001C1B0E /* LiloTests */,
 				1A3C593C259B76E7001C1B0E /* LiloUITests */,
 				1A3C5919259B76E4001C1B0E /* Products */,
+				C16F12719E42D6FEF8FC77DB /* Pods */,
+				9BA6C89F9A426A17BB383824 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +169,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9BA6C89F9A426A17BB383824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59EF48E2E455B4EF83F735E7 /* Pods_Lilo.framework */,
+				1DD3F37F2F9C6EF2A69B120A /* Pods_Lilo_LiloUITests.framework */,
+				9277DB99EB8A093E09228749 /* Pods_LiloTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C16F12719E42D6FEF8FC77DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CE2956EE022C8A4311C59AC /* Pods-Lilo.debug.xcconfig */,
+				1F7438924ADFD5A9603659C1 /* Pods-Lilo.release.xcconfig */,
+				BE9F8BD1747617C8236D8335 /* Pods-Lilo-LiloUITests.debug.xcconfig */,
+				C18124E8FC414BF7E4E8CED8 /* Pods-Lilo-LiloUITests.release.xcconfig */,
+				7B9721009607EDD21575ED5B /* Pods-LiloTests.debug.xcconfig */,
+				F7C3D410A8FF77C175177036 /* Pods-LiloTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3C5942259B76E7001C1B0E /* Build configuration list for PBXNativeTarget "Lilo" */;
 			buildPhases = (
+				62CBF0894099E1A33C5BEE0A /* [CP] Check Pods Manifest.lock */,
 				1A3C5914259B76E4001C1B0E /* Sources */,
 				1A3C5915259B76E4001C1B0E /* Frameworks */,
 				1A3C5916259B76E4001C1B0E /* Resources */,
+				430BCE2FA939978B286107BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +219,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3C5945259B76E7001C1B0E /* Build configuration list for PBXNativeTarget "LiloTests" */;
 			buildPhases = (
+				474F040271444BB9A995D8FE /* [CP] Check Pods Manifest.lock */,
 				1A3C592A259B76E7001C1B0E /* Sources */,
 				1A3C592B259B76E7001C1B0E /* Frameworks */,
 				1A3C592C259B76E7001C1B0E /* Resources */,
@@ -194,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A3C5948259B76E7001C1B0E /* Build configuration list for PBXNativeTarget "LiloUITests" */;
 			buildPhases = (
+				6AA7C8E8C7EC51C24C8303C2 /* [CP] Check Pods Manifest.lock */,
 				1A3C5935259B76E7001C1B0E /* Sources */,
 				1A3C5936259B76E7001C1B0E /* Frameworks */,
 				1A3C5937259B76E7001C1B0E /* Resources */,
+				E9F5FB22DD4A8F15662190E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,6 +322,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		430BCE2FA939978B286107BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lilo/Pods-Lilo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lilo/Pods-Lilo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lilo/Pods-Lilo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		474F040271444BB9A995D8FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiloTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62CBF0894099E1A33C5BEE0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lilo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AA7C8E8C7EC51C24C8303C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lilo-LiloUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9F5FB22DD4A8F15662190E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lilo-LiloUITests/Pods-Lilo-LiloUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lilo-LiloUITests/Pods-Lilo-LiloUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lilo-LiloUITests/Pods-Lilo-LiloUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1A3C5914259B76E4001C1B0E /* Sources */ = {
@@ -457,6 +606,7 @@
 		};
 		1A3C5943259B76E7001C1B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE2956EE022C8A4311C59AC /* Pods-Lilo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +625,7 @@
 		};
 		1A3C5944259B76E7001C1B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7438924ADFD5A9603659C1 /* Pods-Lilo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -493,6 +644,7 @@
 		};
 		1A3C5946259B76E7001C1B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B9721009607EDD21575ED5B /* Pods-LiloTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -514,6 +666,7 @@
 		};
 		1A3C5947259B76E7001C1B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7C3D410A8FF77C175177036 /* Pods-LiloTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -535,6 +688,7 @@
 		};
 		1A3C5949259B76E7001C1B0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE9F8BD1747617C8236D8335 /* Pods-Lilo-LiloUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +708,7 @@
 		};
 		1A3C594A259B76E7001C1B0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C18124E8FC414BF7E4E8CED8 /* Pods-Lilo-LiloUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
