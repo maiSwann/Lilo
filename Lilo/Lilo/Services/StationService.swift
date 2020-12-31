@@ -13,12 +13,9 @@ import CoreLocation
 class StationService {
     static let instance = StationService()
     
-    var stations = [Station]()
-    var stationsId = [Int]()
     var stationsLocation = [CLLocation]()
-    
-    // Test by dic
-    var stationsDict = [CLLocation:Int]()
+    var stationsIdByLocation = [CLLocation:Int]()
+    var stations: Stations!
     
     func getAllStations(completion: @escaping CompletionHandler) {
         AF.request("\(URL_STATIONS_INFOS)", method: .get).responseJSON { (response) in
@@ -50,18 +47,16 @@ class StationService {
                 let lat = item["lat"].doubleValue
                 let lon = item["lon"].doubleValue
                 let coordonate = CLLocation(latitude: lat, longitude: lon)
-//                let station = Station(stationId: id, stationLocation: coordonate)
-//
-//                stations.append(station)
-                stationsId.append(id)
+
                 stationsLocation.append(coordonate)
-                stationsDict[coordonate] = id
+                stationsIdByLocation[coordonate] = id
             }
+            stations = Stations(stationsLocation: stationsLocation, stationsIdByLocation: stationsIdByLocation)
         }
     }
     
     func sortedByTenClosestLocation(userLocation: CLLocation) -> [CLLocation] {
-        print("UserLocation = \(userLocation)")
-        return [CLLocation](stationsLocation.sorted(by: { userLocation.distance(from: $0) < userLocation.distance(from: $1)}).prefix(10))
+        stations.stationsLocation = [CLLocation]((stations.stationsLocation.sorted(by: { userLocation.distance(from: $0) < userLocation.distance(from: $1)}).prefix(10)))
+        return stations.stationsLocation
     }
 }
