@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct Station {
-    public private(set) var stationId: Int
-    public private(set) var stationLocation: CLLocation
+struct Stations {
+    var stationsLocation: [CLLocation]!
+    var stationsIdByLocation: [CLLocation:Int]!
 }

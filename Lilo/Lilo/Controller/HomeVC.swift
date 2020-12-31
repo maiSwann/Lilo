@@ -29,6 +29,14 @@ class HomeVC: UIViewController {
                 let closestTenLocation = StationService.instance.sortedByTenClosestLocation(userLocation: location)
                 
                 self.displayStationPin(locations: closestTenLocation)
+                /* Call request bike
+                    if !sucess return
+                 */
+                BikeService.instance.getAllAvailableBikesInStations { (success) in
+                    if !success {
+                        return
+                    }
+                }
             }
         }
     }
