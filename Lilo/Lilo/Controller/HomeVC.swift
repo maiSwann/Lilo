@@ -29,12 +29,10 @@ class HomeVC: UIViewController {
                 let closestTenLocation = StationService.instance.sortedByTenClosestLocation(userLocation: location)
                 
                 self.displayStationPin(locations: closestTenLocation)
-                /* Call request bike
-                    if !sucess return
-                 */
                 BikeService.instance.getAllAvailableBikesInStations { (success) in
-                    if !success {
-                        return
+                    if success {
+                        let bikesByStationsId = BikeService.instance.sortNbrBikesByTenCLosestLocation()
+                        print("bikesByStationsId: \(bikesByStationsId)")
                     }
                 }
             }
@@ -58,6 +56,7 @@ extension HomeVC: MKMapViewDelegate {
     func displayStationPin(locations: [CLLocation]) {
         for i in 0..<locations.count {
             let pinCoordinate = locations[i].coordinate
+            print("pinCoordinate: \(pinCoordinate)")
             let annotation = StationPin(coordinate: pinCoordinate, identifier: "stationPin")
             mapView.addAnnotation(annotation)
         }

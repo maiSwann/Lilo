@@ -13,8 +13,6 @@ import CoreLocation
 class StationService {
     static let instance = StationService()
     
-    var stationsLocation = [CLLocation]()
-    var stationsIdByLocation = [CLLocation:Int]()
     var stations: Stations!
     
     func getAllStations(completion: @escaping CompletionHandler) {
@@ -40,6 +38,8 @@ class StationService {
          return Dict avec station id, Cllocation pour les 10 plus proches
          */
         let json = try! JSON(data: data)
+        var stationsLocation = [CLLocation]()
+        var stationsIdByLocation = [CLLocation:Int]()
         
         if let items = json["data"]["stations"].array {
             for item in items {
