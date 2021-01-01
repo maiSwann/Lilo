@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcT-Jd-ZnO">
-                                <rect key="frame" x="334" y="782" width="60" height="60"/>
+                                <rect key="frame" x="334" y="791" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="6lW-c8-63n"/>
                                     <constraint firstAttribute="height" constant="60" id="Eze-s0-9Ds"/>
@@ -41,11 +41,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ego-Bl-e96" firstAttribute="top" secondItem="OcT-Jd-ZnO" secondAttribute="bottom" constant="45" id="5iK-hj-vpb"/>
                             <constraint firstItem="aWc-hn-GgB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HSK-Fe-j6L"/>
                             <constraint firstItem="ego-Bl-e96" firstAttribute="top" secondItem="aWc-hn-GgB" secondAttribute="bottom" id="LvO-u0-Vbo"/>
                             <constraint firstAttribute="bottom" secondItem="ego-Bl-e96" secondAttribute="bottom" id="Xfd-gT-qwU"/>
                             <constraint firstItem="ego-Bl-e96" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dcK-gj-vUH"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="OcT-Jd-ZnO" secondAttribute="bottom" constant="20" id="gu6-JQ-hSJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OcT-Jd-ZnO" secondAttribute="trailing" id="klW-rC-jdF"/>
                             <constraint firstAttribute="trailing" secondItem="ego-Bl-e96" secondAttribute="trailing" id="qUh-un-bWG"/>
                             <constraint firstItem="aWc-hn-GgB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="slT-Tc-UGK"/>
@@ -54,6 +54,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="aWc-hn-GgB" id="nTR-T3-b3H"/>
+                        <outlet property="pullUpView" destination="ego-Bl-e96" id="sXi-3U-3aN"/>
+                        <outlet property="pullUpViewHeightConstraint" destination="q7n-jE-smz" id="0Qc-y4-5gI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
