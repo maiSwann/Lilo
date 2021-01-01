@@ -9,9 +9,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pullUpViewHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pullUpView: UIView!
     
     var locationManager = CLLocationManager()
     let regionRadius: Double = 1000
@@ -38,7 +42,30 @@ class HomeVC: UIViewController {
             }
         }
     }
-    
+
+    func addSwipe() {
+        print("into add swipe")
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(animateViewDown))
+
+        swipe.direction = .down
+        pullUpView.addGestureRecognizer(swipe)
+    }
+
+    func animateViewUp() {
+        pullUpViewHeightConstraint.constant = 300
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc func animateViewDown() {
+        print("animating down")
+        pullUpViewHeightConstraint.constant = 0
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
         if locationManager.authorizationStatus == .authorizedAlways || locationManager.authorizationStatus == .authorizedWhenInUse {
             centerMapOnUserLocation()
@@ -52,12 +79,32 @@ extension HomeVC: MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         mapView.setRegion(coordinateRegion, animated: true)
     }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        animateViewUp()
+        addSwipe()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil }
+
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "stationPin") as? MKPinAnnotationView
+            if annotationView == nil {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "stationPin")
+                annotationView?.pinTintColor = #colorLiteral(red: 0.1568627451, green: 0.5176470588, blue: 1, alpha: 1)
+                annotationView?.canShowCallout = false
+            } else {
+                annotationView?.annotation = annotation
+            }
+            return annotationView
+    }
     
     func displayStationPin(locations: [CLLocation]) {
         for i in 0..<locations.count {
             let pinCoordinate = locations[i].coordinate
             print("pinCoordinate: \(pinCoordinate)")
             let annotation = StationPin(coordinate: pinCoordinate, identifier: "stationPin")
+            
             mapView.addAnnotation(annotation)
         }
     }
@@ -74,7 +121,7 @@ extension HomeVC: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationManager.startUpdatingLocation()
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first == nil {
             return
