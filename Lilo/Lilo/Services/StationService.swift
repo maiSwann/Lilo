@@ -59,4 +59,16 @@ class StationService {
         stations.stationsLocation = [CLLocation]((stations.stationsLocation.sorted(by: { userLocation.distance(from: $0) < userLocation.distance(from: $1)}).prefix(10)))
         return stations.stationsLocation
     }
+    
+    func getStationIdByLocation(stationLocation: CLLocation) -> Int {
+        var id = 0
+        
+        for (key, value) in stations.stationsIdByLocation {
+            if stationLocation.coordinate.longitude == key.coordinate.longitude &&
+                stationLocation.coordinate.latitude == key.coordinate.latitude {
+                id = value
+            }
+        }
+        return id
+    }
 }

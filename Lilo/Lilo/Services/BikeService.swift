@@ -67,4 +67,15 @@ class BikeService {
         bikes.bikesByStationsId = newDict
         return bikes.bikesByStationsId
     }
+    
+    func getBikesNbrById(bikesByStationsId: [Int:Int], stationId: Int) -> Int {
+        var id = 0
+        
+        for (key, value) in bikesByStationsId {
+            if key == stationId {
+                id = value
+            }
+        }
+        return id
+    }
 }

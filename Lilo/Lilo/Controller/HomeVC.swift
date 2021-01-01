@@ -19,12 +19,18 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     var locationManager = CLLocationManager()
     let regionRadius: Double = 1000
+    var spinner2: UIActivityIndicatorView!
+    var screenSize = UIScreen.main.bounds
+    
+    var bikesTitleLbl: UILabel?
+    var bikesByStationsId: [Int:Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
         locationManager.delegate = self
         configureLocationServices()
+        addSpinner()
         
         StationService.instance.getAllStations { (success) in
             if success {
@@ -36,22 +42,36 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
                 BikeService.instance.getAllAvailableBikesInStations { (success) in
                     if success {
                         let bikesByStationsId = BikeService.instance.sortNbrBikesByTenCLosestLocation()
-                        print("bikesByStationsId: \(bikesByStationsId)")
+                        self.bikesByStationsId = bikesByStationsId
+                        if self.bikesByStationsId != nil {
+                            self.hideSpinner()
+                        }
                     }
                 }
             }
         }
     }
+    
+    func addSpinner() {
+        spinner2 = UIActivityIndicatorView(frame: CGRect(x: (screenSize.width / 2) - 50, y: (screenSize.height / 2) - 50, width: 100, height: 100))
+        spinner2.style = .large
+        spinner2.color = #colorLiteral(red: 0.1568627451, green: 0.5176470588, blue: 1, alpha: 1)
+        spinner2.startAnimating()
+        mapView.addSubview(spinner2)
+    }
+    
+    func hideSpinner() {
+        spinner2.isHidden = true
+    }
 
     func addSwipe() {
-        print("into add swipe")
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(animateViewDown))
 
         swipe.direction = .down
         pullUpView.addGestureRecognizer(swipe)
     }
 
-    func animateViewUp() {
+    @objc func animateViewUp() {
         pullUpViewHeightConstraint.constant = 300
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -59,13 +79,29 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func animateViewDown() {
-        print("animating down")
         pullUpViewHeightConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
-
+    
+    func displayNbrBikesAvailable(bikesNbr: Int) {
+        
+        bikesTitleLbl = UILabel(frame: CGRect(x: (screenSize.width / 2) - 100, y: 175, width: 200, height: 40))
+        bikesTitleLbl!.center = CGPoint(x: (screenSize.width / 2) - (bikesTitleLbl!.frame.width / 2), y: 150)
+        bikesTitleLbl!.textAlignment = .center
+        bikesTitleLbl!.font = UIFont(name: "Avenir Next", size: 18)
+        bikesTitleLbl!.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        bikesTitleLbl!.text = "Vélos disponibles: \(bikesNbr)"
+        pullUpView.addSubview(bikesTitleLbl!)
+    }
+    
+    func removeNbrBikesAvailable() {
+        if bikesTitleLbl != nil {
+            bikesTitleLbl?.removeFromSuperview()
+        }
+    }
+    
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
         if locationManager.authorizationStatus == .authorizedAlways || locationManager.authorizationStatus == .authorizedWhenInUse {
             centerMapOnUserLocation()
@@ -81,8 +117,19 @@ extension HomeVC: MKMapViewDelegate {
     }
 
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        animateViewUp()
-        addSwipe()
+        let coordinate = view.annotation!.coordinate
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let id = StationService.instance.getStationIdByLocation(stationLocation: location)
+        
+        if spinner2.isHidden == true {
+            removeNbrBikesAvailable()
+            animateViewUp()
+            addSwipe()
+            if bikesByStationsId != nil {
+                let nbr = BikeService.instance.getBikesNbrById(bikesByStationsId: bikesByStationsId!, stationId: id)
+                displayNbrBikesAvailable(bikesNbr: nbr)
+            }
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -102,7 +149,6 @@ extension HomeVC: MKMapViewDelegate {
     func displayStationPin(locations: [CLLocation]) {
         for i in 0..<locations.count {
             let pinCoordinate = locations[i].coordinate
-            print("pinCoordinate: \(pinCoordinate)")
             let annotation = StationPin(coordinate: pinCoordinate, identifier: "stationPin")
             
             mapView.addAnnotation(annotation)
