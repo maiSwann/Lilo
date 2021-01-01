@@ -15,7 +15,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var pullUpViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var mapViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var pullUpView: UIView!
+    @IBOutlet weak var pullUpView: PullUpView!
     
     var locationManager = CLLocationManager()
     let regionRadius: Double = 1000
@@ -72,6 +72,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func animateViewUp() {
+        // change this to some value unfixed
         pullUpViewHeightConstraint.constant = 300
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -79,7 +80,7 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func animateViewDown() {
-        pullUpViewHeightConstraint.constant = 0
+        pullUpViewHeightConstraint.constant = 10
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }

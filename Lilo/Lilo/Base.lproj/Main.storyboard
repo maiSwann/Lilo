@@ -17,7 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-hn-GgB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="976"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcT-Jd-ZnO">
                                 <rect key="frame" x="334" y="791" width="60" height="60"/>
@@ -30,9 +31,9 @@
                                     <action selector="centerMapBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8a0-9z-Wn0"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ego-Bl-e96">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ego-Bl-e96" customClass="PullUpView" customModule="Lilo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="896" width="414" height="0.0"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="q7n-jE-smz"/>
                                 </constraints>
@@ -43,7 +44,7 @@
                         <constraints>
                             <constraint firstItem="ego-Bl-e96" firstAttribute="top" secondItem="OcT-Jd-ZnO" secondAttribute="bottom" constant="45" id="5iK-hj-vpb"/>
                             <constraint firstItem="aWc-hn-GgB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HSK-Fe-j6L"/>
-                            <constraint firstItem="ego-Bl-e96" firstAttribute="top" secondItem="aWc-hn-GgB" secondAttribute="bottom" id="LvO-u0-Vbo"/>
+                            <constraint firstItem="ego-Bl-e96" firstAttribute="top" secondItem="aWc-hn-GgB" secondAttribute="bottom" constant="-80" id="LvO-u0-Vbo"/>
                             <constraint firstAttribute="bottom" secondItem="ego-Bl-e96" secondAttribute="bottom" id="Xfd-gT-qwU"/>
                             <constraint firstItem="ego-Bl-e96" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dcK-gj-vUH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OcT-Jd-ZnO" secondAttribute="trailing" id="klW-rC-jdF"/>
@@ -54,7 +55,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="aWc-hn-GgB" id="nTR-T3-b3H"/>
-                        <outlet property="pullUpView" destination="ego-Bl-e96" id="sXi-3U-3aN"/>
+                        <outlet property="pullUpView" destination="ego-Bl-e96" id="Cjc-yT-df3"/>
                         <outlet property="pullUpViewHeightConstraint" destination="q7n-jE-smz" id="0Qc-y4-5gI"/>
                     </connections>
                 </viewController>
@@ -67,6 +68,9 @@
         <image name="right-arrow" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
