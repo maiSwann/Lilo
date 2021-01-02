@@ -88,7 +88,6 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     func displayNbrBikesAvailable(bikesNbr: Int) {
         
         bikesTitleLbl = UILabel(frame: CGRect(x: (screenSize.width / 2), y: 175, width: 200, height: 40))
-        print("height : \(screenSize.height)")
         bikesTitleLbl!.center = CGPoint(x: (screenSize.width / 2), y: screenSize.height / 10)
         bikesTitleLbl!.textAlignment = .center
         bikesTitleLbl!.font = UIFont(name: "Gordita Medium", size: 18)

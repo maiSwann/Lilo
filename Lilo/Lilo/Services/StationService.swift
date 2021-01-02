@@ -31,12 +31,6 @@ class StationService {
     }
     
     func parseStation(data: Data) {
-        /*
-         Parse stationID + lat + lon
-         Créer CLLocation
-         Comparer closest location avec tab CLLocation, tab station id (Index correspondent)
-         return Dict avec station id, Cllocation pour les 10 plus proches
-         */
         let json = try! JSON(data: data)
         var stationsLocation = [CLLocation]()
         var stationsIdByLocation = [CLLocation:Int]()
