@@ -62,5 +62,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires your location to show velibs around you</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires your location to show velibs around you</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gordita Medium.otf</string>
+	</array>
 </dict>
 </plist>
