@@ -72,15 +72,14 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @objc func animateViewUp() {
-        // change this to some value unfixed
-        pullUpViewHeightConstraint.constant = 300
+        pullUpViewHeightConstraint.constant = screenSize.height / 5
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
 
     @objc func animateViewDown() {
-        pullUpViewHeightConstraint.constant = 10
+        pullUpViewHeightConstraint.constant = 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
@@ -88,11 +87,12 @@ class HomeVC: UIViewController, UIGestureRecognizerDelegate {
     
     func displayNbrBikesAvailable(bikesNbr: Int) {
         
-        bikesTitleLbl = UILabel(frame: CGRect(x: (screenSize.width / 2) - 100, y: 175, width: 200, height: 40))
-        bikesTitleLbl!.center = CGPoint(x: (screenSize.width / 2) - (bikesTitleLbl!.frame.width / 2), y: 150)
+        bikesTitleLbl = UILabel(frame: CGRect(x: (screenSize.width / 2), y: 175, width: 200, height: 40))
+        print("height : \(screenSize.height)")
+        bikesTitleLbl!.center = CGPoint(x: (screenSize.width / 2), y: screenSize.height / 10)
         bikesTitleLbl!.textAlignment = .center
-        bikesTitleLbl!.font = UIFont(name: "Avenir Next", size: 18)
-        bikesTitleLbl!.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        bikesTitleLbl!.font = UIFont(name: "Gordita Medium", size: 18)
+        bikesTitleLbl!.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         bikesTitleLbl!.text = "Vélos disponibles: \(bikesNbr)"
         pullUpView.addSubview(bikesTitleLbl!)
     }

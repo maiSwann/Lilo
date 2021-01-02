@@ -22,6 +22,7 @@
 		1A442138259DC35E00024F58 /* BikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A442137259DC35E00024F58 /* BikeService.swift */; };
 		1A442140259DD32500024F58 /* Bikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44213F259DD32500024F58 /* Bikes.swift */; };
 		1A44214B259FA53B00024F58 /* PullUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A44214A259FA53B00024F58 /* PullUpView.swift */; };
+		1AE665C525A07D0200F1625B /* Gordita Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1AE665B725A07D0200F1625B /* Gordita Medium.otf */; };
 		1E3B1E737914BF6A382F33E2 /* Pods_Lilo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF48E2E455B4EF83F735E7 /* Pods_Lilo.framework */; };
 		9CB5DD6595E7CE4061CC0955 /* Pods_Lilo_LiloUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD3F37F2F9C6EF2A69B120A /* Pods_Lilo_LiloUITests.framework */; };
 		CFB45D0BDFAB9CE74CE2A743 /* Pods_LiloTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9277DB99EB8A093E09228749 /* Pods_LiloTests.framework */; };
@@ -67,6 +68,7 @@
 		1A442137259DC35E00024F58 /* BikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeService.swift; sourceTree = "<group>"; };
 		1A44213F259DD32500024F58 /* Bikes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bikes.swift; sourceTree = "<group>"; };
 		1A44214A259FA53B00024F58 /* PullUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullUpView.swift; sourceTree = "<group>"; };
+		1AE665B725A07D0200F1625B /* Gordita Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gordita Medium.otf"; sourceTree = "<group>"; };
 		1DD3F37F2F9C6EF2A69B120A /* Pods_Lilo_LiloUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lilo_LiloUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7438924ADFD5A9603659C1 /* Pods-Lilo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo.release.xcconfig"; path = "Target Support Files/Pods-Lilo/Pods-Lilo.release.xcconfig"; sourceTree = "<group>"; };
 		4CE2956EE022C8A4311C59AC /* Pods-Lilo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lilo.debug.xcconfig"; path = "Target Support Files/Pods-Lilo/Pods-Lilo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		1A3C591A259B76E4001C1B0E /* Lilo */ = {
 			isa = PBXGroup;
 			children = (
+				1AE665AE25A07CF200F1625B /* fonts */,
 				1A4420E9259C8D1F00024F58 /* Utilities */,
 				1A4420E8259C8D1400024F58 /* Services */,
 				1A3C5954259B7910001C1B0E /* Controller */,
@@ -206,6 +209,14 @@
 				1A4420EA259C8D3A00024F58 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1AE665AE25A07CF200F1625B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1AE665B725A07D0200F1625B /* Gordita Medium.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		9BA6C89F9A426A17BB383824 /* Frameworks */ = {
@@ -339,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE665C525A07D0200F1625B /* Gordita Medium.otf in Resources */,
 				1A3C5928259B76E7001C1B0E /* LaunchScreen.storyboard in Resources */,
 				1A3C5925259B76E7001C1B0E /* Assets.xcassets in Resources */,
 				1A3C5923259B76E4001C1B0E /* Main.storyboard in Resources */,

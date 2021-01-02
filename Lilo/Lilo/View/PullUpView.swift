@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 class PullUpView: UIView {
 
     override func awakeFromNib() {
@@ -15,7 +14,7 @@ class PullUpView: UIView {
     }
     
     func setupView() {
-        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.clipsToBounds = true
         self.layer.cornerRadius = 30
         self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
