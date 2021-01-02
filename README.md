@@ -24,8 +24,8 @@ First, check out the source, including all the dependencies:
 ### Building it
 
 Open the project, Lilo.xcworkspace.<br>
-Make sure to setup a default location by clicking on your simulator menu : Features - Location - Custom Location...
-Build and Run
+Make sure to setup a default location by clicking on your simulator menu : Features - Location - Custom Location...<br>
+Build and Run<br>
 When the project is running, you can set a debug location directly on XCode : Debug - Simulate Location
 
 # Licence
