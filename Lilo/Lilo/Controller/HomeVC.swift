@@ -122,6 +122,9 @@ extension HomeVC: MKMapViewDelegate {
         let id = StationService.instance.getStationIdByLocation(stationLocation: location)
         
         if spinner2.isHidden == true {
+            if let view = view as? MKPinAnnotationView {
+                view.pinTintColor = #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+            }
             removeNbrBikesAvailable()
             animateViewUp()
             addSwipe()
@@ -129,6 +132,12 @@ extension HomeVC: MKMapViewDelegate {
                 let nbr = BikeService.instance.getBikesNbrById(bikesByStationsId: bikesByStationsId!, stationId: id)
                 displayNbrBikesAvailable(bikesNbr: nbr)
             }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        if let view = view as? MKPinAnnotationView {
+            view.pinTintColor = #colorLiteral(red: 0.1568627451, green: 0.5176470588, blue: 1, alpha: 1)
         }
     }
     
